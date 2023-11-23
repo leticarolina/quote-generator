@@ -1,23 +1,3 @@
-// let apiQuotes = [];
-
-//Get quotes from API
-//created a function called GetQuotes
-// async function getQuotes() {
-//   //logged the api inside the function thru a variable
-//   const apiUrl = "https://type.fit/api/quotes";
-//   try {
-//     //response and apiQuotes are variables declared
-//     const response = await fetch(apiUrl);
-//     apiQuotes = await response.json();
-//     newQuote();
-//   } catch (error) {
-//     //error here
-//   }
-// }
-
-//on load , to get the quotes running as soon as the page loads
-// getQuotes();
-
 const quoteContainer = document.getElementById("quote-container"); //create a variable to target the html element
 const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
@@ -26,9 +6,9 @@ const newQuoteButton = document.getElementById("new-quote");
 
 //Show a new quote
 function newQuote() {
-  //code to pick a random quote from apiQuotes array
+  //code to pick a random quote from api localQuotes
   const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
-  authorText.textContent = quote.author; //textcContent is to pass in a string what is shown on the element
+  authorText.textContent = quote.author; //textContent is to pass in a string what is shown on the element
   if (quote.text.length > 140) {
     quoteText.classList.add("long-quote");
     //classList is to target a CSS declaration block
